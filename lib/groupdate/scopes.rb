@@ -35,6 +35,8 @@ module Groupdate
               ["EXTRACT(HOUR from CONVERT_TZ(#{column}, '+00:00', ?))", time_zone]
             when "week"
               ["CONVERT_TZ(DATE_FORMAT(CONVERT_TZ(DATE_SUB(#{column}, INTERVAL ((#{7 - week_start} + WEEKDAY(CONVERT_TZ(#{column}, '+00:00', ?))) % 7) DAY), '+00:00', ?), '%Y-%m-%d 00:00:00'), ?, '+00:00')", time_zone, time_zone, time_zone]
+            when "month_of_year"
+              ["EXTRACT(MONTH from CONVERT_TZ(#{column}, '+00:00', ?))", time_zone]
             else
               format =
                 case field
