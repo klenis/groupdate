@@ -46,7 +46,7 @@ module Groupdate
             end
 
           # determine start time
-          time = time_range.first.to_time.in_time_zone(@time_zone)
+          time = time_range.first #.to_time.in_time_zone(@time_zone) WORKAROUND!
           starts_at =
             case @field
             when "second"
