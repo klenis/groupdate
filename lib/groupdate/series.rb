@@ -33,6 +33,8 @@ module Groupdate
           0..6
         when "hour_of_day"
           0..23
+        when "month_of_year"
+          0..12
         else
           time_range =
             if @time_range.is_a?(Range)

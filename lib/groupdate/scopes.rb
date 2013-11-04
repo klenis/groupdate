@@ -5,7 +5,7 @@ require "active_record"
 module Groupdate
   module Scopes
     time_fields = %w(second minute hour day week month year)
-    number_fields = %w(day_of_week hour_of_day)
+    number_fields = %w(day_of_week hour_of_day, month_of_year)
     (time_fields + number_fields).each do |field|
       define_method :"group_by_#{field}" do |*args|
         args = args.dup
