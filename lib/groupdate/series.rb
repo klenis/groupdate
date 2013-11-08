@@ -75,7 +75,7 @@ module Groupdate
             series << series.last + step
           end
 
-          series.map{|s| s.to_time.utc }
+          series.map{|s| s.to_time }
         end
 
       Hash[series.map do |k|
